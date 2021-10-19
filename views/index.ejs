@@ -49,5 +49,37 @@
          
         
      <% } %>
+     
+       
+      <table class="table">
+        <tr >
+          <th style="width: 20%;">STT</th>
+          <th style="width: 40%;">Tên công ty</th>
+          <th style="width: 20%;">Avarta</th>
+          <th style="width: 10%;">Chọn</th>
+          <th style="width: 10%;">Xoá</th>
+
+        </tr>
+        <% for(var i=0; i < data.length; i++) { %>
+        <tr>
+          <td><%=i+1%></td>
+          <td><h3 ><%= data[i].companyName%></h3></td>
+
+          
+          <td>  <div><img src=<%=data[i].avatar %> alt="Avatar" style="width:40%"></div>
+            <td><input type="checkbox" name=<%=data[i].id%></td>
+          </td>
+          <td>
+            <form action="/delete" method="POST" enctype="multipart/form-data">
+              <input value="<%=data[i].companyName%>" name="companyName"type="hidden"/>
+              <button>Xoá</button>
+            </form>
+          </td>
+        </tr>
+        <% } %>
+        </table>
+       
+      
+  
 </body>
 </html>
