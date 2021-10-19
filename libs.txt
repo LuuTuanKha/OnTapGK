@@ -1,0 +1,6 @@
+npm i nodemon
+npm i aws-sdk
+npm i dotenv
+npm i ejs
+npm i express
+npm i multer
